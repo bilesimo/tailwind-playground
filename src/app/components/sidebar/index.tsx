@@ -6,19 +6,25 @@ import {
   Flag,
   Home,
   LifeBuoy,
+  Search,
   SquareStack,
   Users,
 } from 'lucide-react'
 import { NavItem } from './nav-item'
 import { UsedSpaceWidget } from './used-space-widget'
 import { Profile } from './profile'
-import { Input } from '../input'
+import * as Input from '../input'
 
 export function Sidebar() {
   return (
     <aside className="flex flex-col gap-6 border-r border-zinc-200 px-5 py-8">
       <Logo />
-      <Input />
+      <Input.Root>
+        <Input.Preffix>
+          <Search className="h-5 w-5 text-zinc-500" />
+        </Input.Preffix>
+        <Input.Control placeholder="Search" />
+      </Input.Root>
       <nav className="space-y-0.5">
         <NavItem title="Home" icon={Home} />
         <NavItem title="Dashboard" icon={BarChart} />
